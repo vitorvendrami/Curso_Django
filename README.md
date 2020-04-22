@@ -33,7 +33,7 @@
     
         git commit -am "mensagem de commit" // passa para staged e já faz o commit 
    
-##### Visualização dos Commits
+#### Visualização dos Commits
 
 * Mostrar commits
 
@@ -64,4 +64,70 @@
  
         git show hash_do_commit //mostra alterações do commit
         
+#### Visualização entre diferenças do mesmo commit
+
+* Mostra diferença entre arquivo e seu estado anterior
+        
+        git diff (arquivo)//mostra a diferença entre um arquivo e o seu estado anterior
+        git diff --staged 
+        git diff hashpai..hasfilho // mostra as alterações entre os commits
+        
+#### Alterações no(s) commit(s)
+   
+        git checkout --arquivo // discarta alterações que não foram para o stage
+        git reset --arquivo // tira o arquivo da stage
+        git reset --soft hash_pai // pega o arquivo comitado e volta pra stage
+        git reset --mixed hash_pai // pega o arquivo comitado e volta pra modified
+        git reset --hard hash_pai // apaga o comit e as alterações
+        git revert hashdocommit "mensagem" ou --no-edit // faz revert do commite
+        git rm nome do arquivo// deleta tudo arquivo e modificações dos filhos
+        git mv nomeantigo nomenovo // muda nome arquivo
+
+        
+### Conexão com o repositório remoto
  
+ *
+ 
+        git remote add origin urldogit//ligar o git no repositório do github
+        git remote // verifica onde está conectado o repositorio
+        git remote -v //mostra o url do repositório
+        git push origin master // sobe os arquivos pro git
+        git push origin nomedabranchlocal:nomedabranchremota // faz o push da maquina para o servidor
+        git pull origin master // pega o repositorio atualizado do git
+        git clone url nome(nome do repositorio opcional) // clona um repositorio do git 
+        
+### Comandos para Branchs
+ 
+* Criar Branch
+
+        git branch nome // cria branch com o nome
+
+* Mostra todas as branchs existentes
+        
+        git branch //mostra as branch que existem o * mostra qual branch está
+
+* Mostra todas as branchs remotas
+
+        git branch -r
+
+* Cria branch 'truncada'
+
+        git branch nomecria nomedaquetrunca
+
+* Muda de branch 
+
+        git checkout nome_Da_branch
+
+* Deleta branch
+
+        git branch -d nomedabranch 
+
+* Junta branchs com merge
+
+        git merge nome_da_branch
+
+* Junta branchs com rebase      
+        
+        git rebase nome_da_branch        
+        
+     
