@@ -86,14 +86,26 @@
         
 ### Conexão com o repositório remoto
  
- *
+* Conectar a um repositório do git
  
         git remote add origin urldogit//ligar o git no repositório do github
+        
+* Verificar onde está conectado e URL 
+        
         git remote // verifica onde está conectado o repositorio
         git remote -v //mostra o url do repositório
+        
+* Upload de arquivos pro repositório
+        
         git push origin master // sobe os arquivos pro git
-        git push origin nomedabranchlocal:nomedabranchremota // faz o push da maquina para o servidor
+        git push origin nomedabranchlocal:nomedabranchremota // Sobe os arquivos de uma branch local para outra do servidor 
+        
+* Download de arquivos do repositório  
+        
         git pull origin master // pega o repositorio atualizado do git
+        
+* Clona um repositório do git
+        
         git clone url nome(nome do repositorio opcional) // clona um repositorio do git 
         
 ### Comandos para Branchs
