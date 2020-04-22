@@ -60,10 +60,43 @@
                 <thead>
                     <tr>
                         <th><a href="/crud/ordenacao/id">ID</a></th>
+                        <th><a href="/crud/ordenacao/nome">Nome</a></th>
+                        <th><a href="/crud/ordenacao/idade">Idade</a></th>
+                        <th><a href="/crud/ordenacao/sexo">Sexo</a></th>
+                        <th><a href="/crud/ordenacao/salario">Salario</a></th>
                     </tr>
                 </thead>
+                <tbody>
+                {% for pessoa in pessoas %}
+                    <tr>
+                        <td nowrap="true ">
+                            <a href="/crud/listagem/{{pessoa.id}}">{{pessoa.id}}</a>
+                        </td>
+                        <td nowrap="true">{{pessoa.nome}}</td>
+                        <td nowrap="true">{{pessoa.idade}}</td>
+                        <td nowrap="true">{{pessoa.sexo}}</td>
+                         <td nowrap="true">{{pessoa.salario}}</td>
+                        <td nowrap="true" align="right">
+                            <a href="/crud/edicao/{{pessoa.id}}" class="btn btn-primary" role="button" >Editar</a>
+                            <a href="/crud/delecao/{{pessoa.id}}" class="btn btn-danger" role="button" >Deletar</a>
+                        </td>
+                    </tr>
+                {%endfor%}
+                </tbody>
             </table>
         </div>
+        <a href="#" onclick="Relatorio()" style="float:right">Imprimir Relatorio</a>
+        <textarea  id="dados" style="display:none;">
+        {% for pessoa in pessoas %}
+            {{pessoa.nome}}|{{pessoa.idade}}|{{pessoa.sexo}}|{{pessoa.salario}}#
+
+            {%endfor%}
+        </textarea>
+        <script>
+            function relatorio() {
+                const doc = new jsPDF();
+            }
+        </script>
     </div>
     
 
