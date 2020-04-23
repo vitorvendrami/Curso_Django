@@ -29,7 +29,7 @@
 	<br>
 	<div class="container">
 		<h2>{{titulo}}</h2>
-		<form action="/crud/salvar_edicao/" method="POST" name="frm_edicao" class="ml-3">
+		<form action="/crud/salvar_delecao/" method="POST" name="frm_delecao" class="ml-3">
 		{% csrf_token %}
 		<input type="hidden" name="id" value="{{pessoa.id}}">
 			<div class="form-group">
